@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h3 List of quizzes
+  table(class="table")
+    thread
+      tr
+        th Quiz
+        th Update time
+        th Created by
+    tbody
+      each quiz in quizzes
+        tr
+          td
+            a(href="/quiz/#{quiz.quizId}") Quiz No.#{quiz.quizId}
+          td #{quiz.formattedUpdatedAt}
+          td #{quiz.user.username}

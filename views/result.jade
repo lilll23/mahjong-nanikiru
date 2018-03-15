@@ -1,0 +1,19 @@
+extends layout
+
+block extraHeader
+  script(src="/javascripts/quiz.js")
+    
+block content
+  h3 Total result
+  table.result(class="table")
+    thread
+      tr
+        th #
+        th Tile
+        th Clicks
+    tbody
+      each c in clicks
+        tr
+          th.rank
+          td: img.tiles(src="../../images/" + c.tileId + ".gif")
+          td #{c.clicks}

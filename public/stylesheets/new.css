@@ -1,0 +1,49 @@
+.tiles{
+  margin:3.5px;
+  z-index: 9;
+  cursor: pointer;
+}
+.tiles:hover{
+  transform: scale(1.1);
+}
+.droppableArea{
+  display: flex;
+  flex-wrap: wrap;
+	justify-content: center;
+}
+.hand{
+  border:1.3px solid #999999;
+  width:45px;
+  height:63px;
+  box-shadow:0px 16px 15px -9px #808080;
+  background:#CACACA;
+  margin:4px;
+}
+.drawnTile{
+  border:1.3px solid #999999;
+  width:45px;
+  height:63px;
+  box-shadow:0px 16px 15px -9px #808080;
+  background:#CACACA;
+  margin:3.5px;
+  margin-left:20px;
+}
+.dora{
+  border:1.3px solid #999999;
+  width:45px;
+  height:63px;
+  box-shadow:0px 16px 15px -9px #808080;
+  background:#CACACA;
+  margin:3.5px;
+  margin-left:20px;
+}
+figcaption{
+  margin-left:17px;
+}
+.movedTiles{
+  box-shadow:1.7px 1.4px 0.5px 0.4px #B47E00;
+  cursor: pointer;
+}
+.btn{
+  margin:4px;
+}

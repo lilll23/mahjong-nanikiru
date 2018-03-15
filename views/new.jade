@@ -1,0 +1,53 @@
+extends layout
+
+block extraHeader
+  script(src="/javascripts/new.bundle.js")
+  link(rel='stylesheet' href='/stylesheets/new.css')
+
+block content
+  div.text-center
+    form(class='info' action='/quiz' method='post')
+      input(type="hidden" name="_csrf" value!="#{csrfToken}")
+      select(name="prevalentWind")
+        option(value="東") 東
+        option(value="南") 南
+      select(name="handNum")
+        - for (let i = 1; i<5; i++)
+          option(value=i + "局") #{i} 局
+      select(name="turnNum")
+        - for (let i = 1; i<19; i++)
+          option(value=i + "順目") #{i} 順目
+      select(name="seatWind")
+        option(value="東家") 東家
+        option(value="南家") 南家
+        option(value="西家") 西家
+        option(value="北家") 北家
+    br
+  div.selectableTiles.text-center
+    each suits in ['m', 'p', 's']
+      - for (let i = 1; i<10; i++)
+        img.tiles.img-fluid(tileId= suits + i src="/images/" + suits + i + ".gif")
+      img.tiles.img-fluid(tileId= suits + "5r" src="/images/" + suits + "5r.gif")
+      br
+    - for (let i = 1; i<5; i++)
+      img.tiles.img-fluid(tileId="w" + i src="/images/w" + i + ".gif")
+    - for (let i = 1; i<4; i++)
+      img.tiles.img-fluid(tileId="z" + i src="/images/z" + i + ".gif")
+    br
+  br
+  div.droppableArea.text-center
+    - for (let i = 0; i<13; i++)
+      div.hand.rounded(id=i)
+    figure
+      div.drawnTile.rounded(id=13)
+      figcaption ツモ
+    figure
+      div.dora.rounded(id=14)
+      figcaption ドラ
+  form(class='comment' action='/quiz' method='post')
+    input.form-control(type="text" name="comment" placeholder="コメントを入力してください")
+  br
+  div.text-center
+    button.reset.btn.btn-danger リセット
+    button.submit.btn.btn-primary 登録
+  br

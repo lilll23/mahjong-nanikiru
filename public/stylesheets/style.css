@@ -1,0 +1,17 @@
+body {
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.tiles{
+  box-shadow:1.7px 1.5px 0.5px 0.4px #B47E00;
+}
+
+table.result{
+  counter-reset: ranking;  
+}
+th.rank:before{
+  counter-increment: ranking; 
+  content: counter(ranking);
+}

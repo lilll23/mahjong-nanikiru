@@ -1,0 +1,7 @@
+{
+  "name": "Mahjong Nani-kiru?",
+  "description": "Mahjong Nani-kiru? app",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}

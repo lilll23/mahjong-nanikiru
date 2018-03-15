@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div(class="jumbotron")
+    h1 Mahjong Nani-kiru?
+    p 
+      |One of the most awesome mahjong 
+      i Nani-kiru? 
+      |app.
+  if user
+    - var hasQuiz = quizzes.length > 0
+    if hasQuiz
+      h3 List of quizzes you created
+      table(class="table")
+        thread
+          tr
+            th Quiz
+            th Update time
+        tbody
+          each quiz in quizzes
+            tr
+              td
+                a(href="/quiz/#{quiz.quizId}") Quiz No.#{quiz.quizId}
+              td #{quiz.formattedUpdatedAt}

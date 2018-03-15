@@ -1,0 +1,63 @@
+.quiz{
+  position: relative;
+  margin: 2em auto;
+  padding: 26px;
+  width: 85%;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px #999;
+}
+.quiz .info{
+  position: absolute;
+  padding: 0 .5em;
+  left: 1em;
+  top: -1em;
+  content: "";
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #F8F9FA;
+  color: #333333;
+}
+.quiz h6{
+    position: absolute;
+    right: 16px;
+    bottom: 6px;
+}
+
+.tiles:hover, .drawnTile:hover{
+  transform: scale(1.2);
+}
+.tiles{
+  margin:4px;
+  cursor : pointer;
+}
+.drawnTile{
+  margin-left:20px;
+  box-shadow:1.7px 1.5px 0.5px 0.4px #B47E00;
+  cursor : pointer;
+}
+.dora{
+  width: 8%;
+  height: 8%;
+  margin-bottom:11px;
+  box-shadow:1.7px 1.5px 0.5px 0.4px #B47E00;
+}
+
+.comment{
+  position: relative;
+  width: 85%;
+  padding: 20px;
+  color: black;
+  background: rgb(210, 210, 210);
+}
+.comment::before{
+  content: '';
+  position: absolute;
+  left: 65px;
+  top: -15px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgb(210, 210, 210);
+  border-left: 15px solid transparent;
+}

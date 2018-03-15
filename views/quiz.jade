@@ -1,0 +1,21 @@
+extends layout
+
+block extraHeader
+  link(rel='stylesheet' href='/stylesheets/quiz.css')
+
+block content
+  div.quiz.rounded.text-center
+    span.info #{quiz.prevalentWind}#{quiz.handNum} #{quiz.turnNum} #{quiz.seatWind} ドラ 
+      img.dora.img-fluid(tileId=quiz.quizContent[14] src="../images/" + quiz.quizContent[14] + ".gif")
+    br
+    - for (let i = 0; i<13; i++)
+      a(href="#{quiz.quizId}/vote/#{quiz.quizContent[i]}")
+        img.tiles.img-fluid(tileId=quiz.quizContent[i] src="../images/" + quiz.quizContent[i] + ".gif")
+    a(href="#{quiz.quizId}/vote/#{quiz.quizContent[13]}")
+      img.drawnTile.img-fluid(tileId=quiz.quizContent[13] src="../images/" + quiz.quizContent[13] + ".gif")
+    br
+    br
+    h6 問題作成者: #{quiz.user.username}
+    a(href=quiz.quizId + "/result") 集計結果
+  if quiz.comment
+    div.comment.rounded.text-center.mx-auto #{quiz.comment}
