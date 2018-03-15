@@ -16,7 +16,9 @@ html
       a(class="navbar-brand mb-0 h1 text-light" href="/") 
         img(src='/images/ton.png')
         | Mahjong Nani-kiru?
-      div(class="collapse navbar-collapse")
+      button(type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false")
+        span(class="navbar-toggler-icon")
+      div(class="collapse navbar-collapse" id="Navbar")
         ul(class="navbar-nav mr-auto")
           li
             a(class="nav-link" href="/list") List
