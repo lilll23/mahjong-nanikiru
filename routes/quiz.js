@@ -9,7 +9,7 @@ const csrf = require('csurf');
 const csrfProtection = csrf({ cookie: true });
 
 router.get('/new', authenticationEnsurer, csrfProtection, (req, res, next) => {
-    res.render('new', { user: req.user, csrfToken: req.csrfToken() });
+    res.render('new', { user: req.user, csrfToken: req.csrfToken(), create: true });
 });
 
 router.get('/:quizId(\\d+)', function(req, res, next) {
