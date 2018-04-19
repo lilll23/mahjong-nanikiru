@@ -5,7 +5,7 @@ block extraHeader
   link(rel='stylesheet' href='/stylesheets/new.css')
 
 block content
-  div.text-center
+  div(data-step="1" data-intro="まずは場風、局数、順目、自家風を設定！" class='text-center')
     form(class='info' action='/quiz' method='post')
       input(type="hidden" name="_csrf" value!="#{csrfToken}")
       select(name="prevalentWind")
@@ -23,7 +23,7 @@ block content
         option(value="西家") 西家
         option(value="北家") 北家
     br
-  div.selectableTiles.text-center
+  div(data-step="2" data-intro="次に牌をマウスでドラッグして…" class='selectableTiles text-center')
     each suits in ['m', 'p', 's']
       - for (let i = 1; i<10; i++)
         img.tiles.img-fluid(tileId= suits + i src="/images/" + suits + i + ".gif")
@@ -35,7 +35,7 @@ block content
       img.tiles.img-fluid(tileId="z" + i src="/images/z" + i + ".gif")
     br
   br
-  div.droppableArea.text-center
+  div(data-step="3" data-intro="灰色のボックスへドロップ！（牌は登録後に自動理牌されます）" class='droppableArea text-center')
     - for (let i = 0; i<13; i++)
       div.hand.rounded(id=i)
     figure
@@ -44,10 +44,12 @@ block content
     figure
       div.dora.rounded(id=14)
       figcaption ドラ
-  form(class='comment' action='/quiz' method='post')
+  form(data-step="4" data-intro="最後にコメントを書いて" class='comment' action='/quiz' method='post')
     input.form-control(type="text" name="comment" placeholder="コメントを入力してください")
   br
   div.text-center
     button.reset.btn.btn-danger リセット
-    button.submit.btn.btn-primary 登録
-  br
+    button(data-step="5" data-intro="登録ボタンをクリック！" class='submit btn btn-primary') 登録
+    br
+    br
+    a(href="#" class='howto') How to?

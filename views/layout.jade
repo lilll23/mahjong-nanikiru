@@ -10,6 +10,7 @@ html
     link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css")
     link(rel='stylesheet' href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
     link(rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css")
+    link(rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.min.css")
     block extraHeader
   body(class="bg-light")
     nav(class="navbar navbar-expand-lg navbar-dark bg-dark")
@@ -20,13 +21,16 @@ html
         span(class="navbar-toggler-icon")
       div(class="collapse navbar-collapse" id="Navbar")
         ul(class="navbar-nav mr-auto")
-          li
+          li(class="nav-item")
             a(class="nav-link" href="/list") List
+          li(class="nav-item")
+            a(class="nav-link" href="/quiz/new") Create
           if user
-            a(class="nav-link" href="/quiz/new") Create 
-            a(class="nav-link" href="/logout") Sign out
+            li(class="nav-item")
+              a(class="nav-link" href="/logout") Sign out
           else
-            a(class="nav-link" href="/login") Sign in
+            li(class="nav-item")
+              a(class="nav-link" href="/login") Sign in
     div(class="container")
       br
       block content

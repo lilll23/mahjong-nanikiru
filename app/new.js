@@ -5,6 +5,7 @@ const global = Function('return this;')();
 global.jQuery = $;
 const jqueryUI = require('jquery-ui');
 const bootstrap = require('bootstrap');
+const introJs = require('intro.js');
 
 $(function(){
   $('.tiles').draggable({ 
@@ -83,5 +84,14 @@ $(function(){
 
   $('.reset').on('click', function(){
     $('.movedTiles').remove();
+  });
+
+  $('.howto').on('click', function(){
+    introJs.introJs().setOptions({
+      'nextLabel': '次へ',
+      'prevLabel': '前へ',
+      'skipLabel': 'スキップ',
+      'doneLabel': '完了！'
+    }).start();
   });
 });
